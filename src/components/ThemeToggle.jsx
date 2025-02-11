@@ -8,13 +8,14 @@ const ThemeToggle = () => {
     
  
     <div style={{display: "flex", justifyContent: "flex-end"}}>
-         <button
-      onClick={switchTheme} 
-      className={` p-2 rounded-full transition-colors duration-300 
-        ${theme === "light" ? "bg-gray-200 text-black" : "bg-gray-800 text-white"}`}  
-    >
-      {theme === "light" ? <Moon size={24} /> : <Sun size={24} />}
-    </button>
+        <a
+  onClick={switchTheme}
+ 
+    
+    style={{  cursor: 'pointer' }}
+>
+  {theme === "light" ? <Moon size={30} color="black" /> : <Sun size={30}  color='#ffffff'/>}
+</a>
     </div>
   );
 };

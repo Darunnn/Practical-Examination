@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "./features/themeSlice";
 import ThemeToggle from "./components/ThemeToggle";
 import ProductList from "./components/Product/ProductList";
+import ChatBox from "./components/chat/chatBox";
 function App() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
@@ -16,6 +17,7 @@ function App() {
    
       <ThemeToggle />
       <ProductList />
+      <ChatBox />
     </div>
   );
 }

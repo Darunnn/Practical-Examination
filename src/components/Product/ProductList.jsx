@@ -110,6 +110,7 @@ const ProductList = () => {
     }`}>
     
   <h1 style={{ textAlign: 'center' }}>Product Management</h1>
+  <div style={{display: "flex", justifyContent: "flex-end"}}>
   <button 
     onClick={addNewProductHandler}
     className="ml-auto px-4 py-2 bg-green-500 text-white hover:bg-green-600"
@@ -117,6 +118,8 @@ const ProductList = () => {
     Add New Product
   </button>
 
+  </div>
+  
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className={`p-6 rounded-lg ${
