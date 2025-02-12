@@ -6,7 +6,8 @@
   color-scheme: light dark;
   --bg-color: #ffffff;
   --text-color: #000000;
-
+  --button-bg: #333333;
+  --button-text: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,6 +17,8 @@
 .dark {
   --bg-color: #121212;
   --text-color: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #121212;
 }
 
 a {
@@ -46,7 +49,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+    background-color: var(--button-bg);
+  color: var(--button-text);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -70,7 +74,5 @@ button:focus-visible {
     color: #747bff;
   }
 
-  button {
-    background-color: #f9f9f9;
-  }
+  
 }

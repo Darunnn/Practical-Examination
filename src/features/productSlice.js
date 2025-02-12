@@ -1,23 +1,37 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  items: [],
+  nextId: 1, // ค่าตั้งต้นของ nextId
+};
+
 const productSlice = createSlice({
   name: 'products',
-  initialState: [],
+  initialState,
   reducers: {
     addProduct: (state, action) => {
-      state.push(action.payload);
-    },
-    updateProduct: (state, action) => {
-      const index = state.findIndex(product => product.id === action.payload.id);
-      if (index !== -1) {
-        state[index] = action.payload;
-      }
+      state.items.push(action.payload);
+      state.nextId += 1; // อัปเดต nextId ใน reducer
     },
     deleteProduct: (state, action) => {
-      return state.filter(product => product.name !== action.payload);
+      state.items = state.items.filter(product => product.id !== action.payload);
+    },
+    updateProduct: (state, action) => {
+      const index = state.items.findIndex(p => p.id === action.payload.id);
+      if (index !== -1) {
+        state.items[index] = action.payload;
+      }
+    },
+    initializeFromLocalStorage: (state) => {
+      const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
+      state.items = storedProducts;
+      state.nextId = storedProducts.length > 0 ? Math.max(...storedProducts.map(p => p.id)) + 1 : 1;
+    },
+    updateNextId: (state, action) => {
+      state.nextId = action.payload; // อัปเดตค่า nextId
     }
   }
 });
 
-export const { addProduct, updateProduct, deleteProduct } = productSlice.actions;
+export const { addProduct, deleteProduct, updateProduct, initializeFromLocalStorage, updateNextId } = productSlice.actions;
 export default productSlice.reducer;
