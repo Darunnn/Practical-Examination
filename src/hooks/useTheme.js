@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../features/themeSlice"; // หรือเส้นทางที่ถูกต้อง
+import { toggleTheme } from "../features/themeSlice"; 
 
 const useTheme = () => {
   const dispatch = useDispatch();

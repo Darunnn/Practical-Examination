@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
-  nextId: 1, // ค่าตั้งต้นของ nextId
+  nextId: 1, 
 };
 
 const productSlice = createSlice({
@@ -11,7 +11,7 @@ const productSlice = createSlice({
   reducers: {
     addProduct: (state, action) => {
       state.items.push(action.payload);
-      state.nextId += 1; // อัปเดต nextId ใน reducer
+      state.nextId += 1; 
     },
     deleteProduct: (state, action) => {
       state.items = state.items.filter(product => product.id !== action.payload);
@@ -28,7 +28,7 @@ const productSlice = createSlice({
       state.nextId = storedProducts.length > 0 ? Math.max(...storedProducts.map(p => p.id)) + 1 : 1;
     },
     updateNextId: (state, action) => {
-      state.nextId = action.payload; // อัปเดตค่า nextId
+      state.nextId = action.payload; 
     }
   }
 });

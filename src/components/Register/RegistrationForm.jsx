@@ -6,8 +6,8 @@ const RegistrationForm = () => {
   const [showForm, setShowForm] = useState(false);
 
   const onSubmit = (data) => {
-    console.log('Registered User:', data);
-    setShowForm(false); // ซ่อนฟอร์มเมื่อกด Submit
+    
+    setShowForm(false); 
   };
 
   return (

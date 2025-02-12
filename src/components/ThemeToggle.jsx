@@ -2,7 +2,7 @@ import useTheme from "../hooks/useTheme";
 import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
-  const { theme, switchTheme } = useTheme(); // ใช้ hook ที่ทำงานร่วมกับ Redux
+  const { theme, switchTheme } = useTheme(); 
 
   return (
     

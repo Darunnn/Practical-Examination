@@ -18,9 +18,9 @@ const Modal = ({ isOpen, onClose, children }) => {
 const ProductForm = ({ product, saveProduct, closeForm, products = [] }) => {
   const [formData, setFormData] = useState({ name: "", price: "" });
   const [error, setError] = useState("");
-  const [nextId, setNextId] = useState(1); // เพิ่ม state สำหรับ nextId
+  const [nextId, setNextId] = useState(1); 
 
-  // ดึงข้อมูลสินค้าและอัพเดตค่าในฟอร์มเมื่อเปิดฟอร์มใหม่
+  
   useEffect(() => {
     if (product) {
       setFormData({ name: product.name, price: product.price });
@@ -32,29 +32,29 @@ const ProductForm = ({ product, saveProduct, closeForm, products = [] }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setError(""); // ล้างข้อความข้อผิดพลาดเมื่อมีการพิมพ์ใหม่
+    setError(""); 
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    // ตรวจสอบชื่อสินค้าไม่ให้ซ้ำกับสินค้าที่มีอยู่ใน products
+    
     const isProductNameExists = products.some((p) => p.name.toLowerCase() === formData.name.toLowerCase());
     if (isProductNameExists) {
       setError("Product name must be unique.");
       return;
     }
   
-    // สร้างสินค้าใหม่
+    
     const newProduct = {
       ...formData,
       id: nextId, 
     };
   
-    // บันทึกสินค้าใหม่
+    
     saveProduct(newProduct);
    
-    // เพิ่ม nextId สำหรับสินค้าต่อไป
+    
     setNextId(nextId + 1);
   
     closeForm();

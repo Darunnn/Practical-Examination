@@ -1,4 +1,4 @@
-// cartSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
@@ -17,7 +17,7 @@ const cartSlice = createSlice({
       }
     },
     removeFromCart: (state, action) => {
-        const { id } = action.payload; // รับ id จาก payload
+        const { id } = action.payload; 
         state.cart = state.cart.filter(item => item.id !== id);
       },
     increaseQuantity: (state, action) => {

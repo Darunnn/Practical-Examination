@@ -15,7 +15,7 @@ const paginationSlice = createSlice({
   reducers: {
     setPage: (state, action) => {
       state.currentPage = action.payload;
-      localStorage.setItem('currentPage', action.payload); // Save to Local Storage
+      localStorage.setItem('currentPage', action.payload); 
     },
     setPaginationData: (state, action) => {
       state.data = action.payload.data;

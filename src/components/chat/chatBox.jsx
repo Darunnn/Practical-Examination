@@ -6,7 +6,7 @@ const ChatBox = () => {
   const { sendMessage } = useWebSocket("ws://localhost:5000");
   const messages = useSelector((state) => state.chat.messages);
   const [input, setInput] = useState("");
-  const [showChat, setShowChat] = useState(false); // State ควบคุมการแสดงผล
+  const [showChat, setShowChat] = useState(false); 
 
   const handleSend = () => {
     if (input.trim()) {

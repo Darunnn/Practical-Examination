@@ -38,7 +38,7 @@ const ProductList = () => {
     dispatch(deleteProduct(productId));
   };
 
-  // เพิ่มฟังก์ชันที่หายไป
+  
   const addNewProductHandler = () => {
     setEditingProduct(null);
     setShowForm(true);

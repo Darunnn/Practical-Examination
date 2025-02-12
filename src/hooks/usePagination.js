@@ -9,14 +9,14 @@ const usePagination = (storageKey, limit = 10) => {
   const fetchData = useCallback(() => {
     setLoading(true);
     try {
-      // ดึงข้อมูลจาก localStorage
+      
       const allData = JSON.parse(localStorage.getItem(storageKey)) || [];
       
-      // คำนวณ pagination
+      
       const startIndex = (currentPage - 1) * limit;
       const endIndex = startIndex + limit;
       
-      // แบ่งข้อมูลตามหน้า
+      
       const paginatedData = allData.slice(startIndex, endIndex);
       
       setData(paginatedData);
@@ -30,7 +30,7 @@ const usePagination = (storageKey, limit = 10) => {
   }, [storageKey, currentPage, limit]);
 
   const goToPage = useCallback((pageNumber) => {
-    // ตรวจสอบว่ามีข้อมูลในหน้าที่จะไปหรือไม่
+    
     const allData = JSON.parse(localStorage.getItem(storageKey)) || [];
     const totalPages = Math.ceil(allData.length / limit);
     
